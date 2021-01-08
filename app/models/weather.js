@@ -10,5 +10,17 @@ export default class Weather {
 
     this.city = data.name
     this.kelvin = data.main.temp
+    this.celsius = Math.round(data.main.temp - 273.15)
+    this.fahrenheit = Math.round((data.main.temp - 273.15) * (9/5) + 32)
+
+  }
+
+  get Template() {
+    return /*html*/`
+    <div class="col">
+      <h6>${this.city}</h6>
+      <h4>${this.celsius}°</h4>
+    </div>
+    `
   }
 }
