@@ -4,5 +4,4 @@ export default class Image {
     this.largeUrl = largeUrl || large_url
   }
 
-  
 }

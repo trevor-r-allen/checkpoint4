@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: $body-bg;
+  background-size: cover;
 }
 
 main {
@@ -19,3 +20,6 @@ i:hover {
   cursor: pointer;
 }
 
+.card {
+  background-color: rgba(255, 255, 255, 0.6)
+}

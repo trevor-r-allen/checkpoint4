@@ -1,14 +1,11 @@
-
-//TODO Create methods for constructor, and rendering the image to the page
-
 import { ProxyState } from "../AppState.js"
 import imageService from "../Services/ImageService.js"
 
 //      (you may wish to set it as a background image: https://www.w3schools.com/JSREF/prop_style_backgroundimage.asp)
 function _drawImage(){
-    if(ProxyState.image){
-      document.body.style.backgroundImage = ProxyState.image.largeUrl
-    }
+    // if(ProxyState.image){
+      document.body.style.backgroundImage = `url('${ProxyState.image.largeUrl}')`
+    // }
     console.log(ProxyState.image)
 }
 export default class ImageController {
@@ -16,9 +13,8 @@ export default class ImageController {
     console.log('Summoning Reality')
     ProxyState.on("image", _drawImage)
     this.getImage()
-
-
   }
+
   getImage() {
     try {
       imageService.getImage()
@@ -26,4 +22,5 @@ export default class ImageController {
       console.error(error)
     }
   }
+
 }
