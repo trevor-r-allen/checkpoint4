@@ -1,36 +1,41 @@
 import { ProxyState } from "../AppState.js";
+import Todo from "../Models/Todo.js";
 import { api } from "../Services/AxiosService.js";
 
-// TODO you will need to change 'YOURNAME' to your actual name or all requests will be rejected
-let url = 'YOURNAME/todos/'
 
+let url = 'trevor/todos/'
 
 class TodoService {
   async getTodos() {
     console.log("Getting the Todo List");
     let res = await api.get(url);
-    //TODO Handle this response from the server
+    console.log(res.data)
+    ProxyState.todos = res.data.map(t => new Todo(t))
   }
 
   async addTodo(todo) {
     let res = await api.post(url, todo);
-    //TODO Handle this response from the server
+    console.log(res.data)
+    ProxyState.todos = [...ProxyState.todos, new Todo(res.data)]
   }
 
   async toggleTodoStatus(todoId) {
-    let todo = await ProxyState.todos.find(todo => todo.id == todoId);
-    //TODO Make sure that you found a todo,
-    //		and if you did find one
-    //		change its completed status to whatever it is not (ex: false => true or true => false)
+    let todos = ProxyState.todos
 
-    let res = await api.put(url + todoId, todo);
-    //TODO how do you trigger this change
+    let todo = todos.find(t => t.id == todoId);
+    let todoIndex = todos.indexOf(todo)
+    if(todo) {
+      todo.completed ? todo.completed = false : todo.completed = true
+      }
+    await api.put(url + todoId, todo);
+    todos.splice(todoIndex, 1, todo)
+    ProxyState.todos = todos
   }
 
   async removeTodo(todoId) {
-    //TODO Work through this one on your own
-    //		what is the request type
-    //		once the response comes back, how do you update the state
+    let res = await api.delete(url + todoId);
+    console.log(res.data)
+    ProxyState.todos = ProxyState.todos.filter(t => t.id !== todoId)
   }
 }
 
