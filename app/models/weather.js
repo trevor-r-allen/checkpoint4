@@ -20,6 +20,14 @@ export default class Weather {
     return /*html*/`
     <img class="card-img-top" src="" alt="">
     <div class="card-body text-center">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">C</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">F</label>
+      </div>
         <h4 class="card-title">${this.celsius}°</h4>
         <p class="card-text">${this.city}</p>
     </div>

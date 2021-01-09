@@ -10704,4 +10704,13 @@ i:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+#authorText {
+  opacity: 0;
+}
+
+#quoteText:hover + #authorText {
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=main.css.map */
