@@ -13,13 +13,18 @@
 <body>
     <main class="container-fluid d-flex flex-column justify-content-between">
         <div class="row justify-content-end">
-            <div class="col-3 card" id="weather">
+            <div class="col-2">
+                <div class="card d-flex align-items-center text-center" id="weather">
 
+                </div>
             </div>
 
         </div>
         <div class="row justify-content-around">
-            <div class="col-3 card" id="time">
+            <div class="col-3">
+                <div class="card" id="time">
+
+                </div>
 
             </div>
         </div>
@@ -33,17 +38,19 @@
                 </div>
 
             </div>
-            <div class="col-3 card">
-                <div class="card-body">
-                    <div id="todos">
-                        
-                    </div>
-                    <form onsubmit="app.todoController.addTodo(event)">
-                        <div class="input-group mb-3">
-                            <input type="text" name="description" id="description"  class="form-control" placeholder="New To-do"  aria-label="Todo Description" aria-describedby="button-add">
-                            <!-- <button class="btn btn-outline-grey" type="submit"     id="button-add">Add</button> -->
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="todos">
+
                         </div>
-                    </form>
+                        <form onsubmit="app.todoController.addTodo(event)">
+                            <div class="input-group mb-3">
+                                <input type="text" name="description" id="description"      class="form-control" placeholder="New To-do"  aria-label="Todo  Description" aria-describedby="button-add">
+                                <!-- <button class="btn btn-outline-grey" type="submit"         id="button-add">Add</button> -->
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

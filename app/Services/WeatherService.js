@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import Weather from "../Models/Weather.js";
-import { api } from "./AxiosService.js";
+import { api, openWeather } from "./AxiosService.js";
 
 class WeatherService {
   async getWeather() {
