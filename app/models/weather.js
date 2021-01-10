@@ -15,7 +15,7 @@ export default class Weather {
     <div class="card-body">
         <div class="d-flex align-items-center" onclick="app.weatherController.toggleUnits(${this.celsius}, ${this.fahrenheit})">
             <img src="${this.icon}" alt="">
-            <h3 class="card-title mb-0 mr-1" id="temp">${this.celsius}°</h3>
+            <h3 class="card-title mb-0 mr-1" id="temp">${this.celsius}°C</h3>
         </div>
         <p class="card-text">${this.city}</p>
     </div>

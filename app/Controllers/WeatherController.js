@@ -22,11 +22,11 @@ export default class WeatherController {
 
   toggleUnits(c, f){
     let currentUnits = document.getElementById('temp').innerHTML
-    if (currentUnits == c + "°") {
-      document.getElementById("temp").innerHTML = f + "°"
+    if (currentUnits == c + "°C") {
+      document.getElementById("temp").innerHTML = f + "°F"
     }
     else{
-      document.getElementById("temp").innerHTML = c + "°"
+      document.getElementById("temp").innerHTML = c + "°C"
     }
   }
 }
